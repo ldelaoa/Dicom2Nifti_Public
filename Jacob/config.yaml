@@ -1,0 +1,16 @@
+log_output: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\logs\ # leave empty for no logging, otherwise specify path but no file name. Logs will automatically be dated by now.
+data_output: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\data_output
+data_dir: \\zkh\appdata\RTDicom\Projectline - Modelling lung cancer outcomes [panama code]\DICOM_data\DATA_VOLLEDIG_unstructured
+csv_output: '.\scan_data_structured_PET.csv'
+patient_excel_output: '.\scan_data.xlsx'
+unstructured: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\data_output\scan_collectionDATA_VOLLEDIG_unstructured.csv
+structured_pet: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\data_output\scan_collectionPET_DICOM.csv
+structured_ct: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\data_output\scan_collectionCT_DICOM_CLEAN.csv
+endpoints: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\EndpointsPatients\RS_Pneumonitis_CompleteCases_15-07-21_prepros3_oRGINELE_KOPIE.xlsx
+ct: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\CT 1.nii
+gtv: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\GTV 1.nii
+pct: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\0010539\20150507\CT
+rtstruct: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\0010539\20150507\RTSTRUCT
+rtdose: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\0010539\20150507\RTDOSE
+pet: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Scripts\Data pipeline\0010539\X2\PET WB EARL
+available_scans_with_path: \\zkh\appdata\RTDicom\Projectline_modelling_lung_cancer\Users\Jacob Menzinga\Data analyses\scans_and_phases_available_with_path.xlsx

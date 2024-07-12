@@ -1,0 +1,40 @@
+window_type : 'lung'
+root_p : //zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/
+root_Nii : "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CT_ITV_GTV_XBP_Nii"
+save_csv : "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CSVs/FinalNiiTable_v3.csv"
+
+structure_for_mask : None
+image_generation_flag: True
+mask_generation_flag: True
+
+# ITV Labels
+itv_tot_labels : ["ITV", "IGTV", "IgTV", "ITV1", "ITV2", "ITV3", "ITV totaal def", "2ITV", "ITV_TOT", "ITV_6000", "ITV_5100", "ITV_Totaal", "ITV_LBK", "ITV_LOK", "IGTV_6000"]
+itv_tumor_labels : ["ITVtumor", "ITV_tumor", "ITVtumor def", "2ITV_tumor", "ITV-P", "ITVtumorA1", "ITV_tumor_LBK", "ITVtu", "IGTVp"]
+itv_ln_labels : ["ITVklieren", "ITV_klier", "ITV_Klier", "ITVklieren def", "2ITV_klier", "ITV_n", "ITV_klier_LBK", "IGTVnode"]
+
+# GTV Labels
+gtv_tot_labels : ["GTV", "GTV1", "GTV2", "GTV3", "GTV totaal def", "2GTV", "GTV_TOT", "GTV_6000", "GTV_5100", "GTV_Totaal", "GTV_LBK", "GTV_LOK", "GTV_5000", "GTV_preop", "GTV_totaal", "GTV_voor OK", "GTVtotaal", "GTVnew", "GTVop", "GTV_voor OK", "GTV oorspr","GTV(op exp)", "GTVtumor_exp", "GTVtumor_exp_50->0"]
+gtv_tumor_labels : ["GTVtumor", "GTV_tumor", "GTVtumor def", "2GTV_tumor", "GTV-P", "GTVtumorA1", "GTV_tumor_LBK", "GTV tumor", "GTVp", "GTVtu", "GTVtumor_insp", "GTVpatelectasebewaren(1)", "GTVt"]
+gtv_ln_labels : ["GTVklieren", "GTV_klier", "GTV_Klier", "GTVklieren def", "2GTV_klier", "GTV_n", "GTV_klier_LBK", "GTVn", "GTVnode_exp", "GTVnodes_exp", "GTVnodes_exp_50->0", "GTVnodes_insp", "GTVklieren"]
+
+#GTV in BP 
+gtv_expi00_labels: ["GTVtumor_insp"]
+
+#BP Tags
+bPTags: {"0%":["t0","100_ex","delay_0","qr40_s3_0","_0_imar"],
+        "10%":["t10","90_ex","delay_10","qr40_s3_10","_10_imar"],
+        "20%":["t20","60_ex","delay_20","qr40_s3_20","_20_imar"],
+        "30%":["t30","delay_30","qr40_s3_30","_30_imar"],
+        "40%":["t40","30_ex","delay_40","qr40_s3_40","_40_imar"],
+        "50%":["t50","5_ex","_1_ex","_2_ex","_3_ex","_4_ex","_8_ex","delay_50","qr40_s3_50","_50_imar"],
+        "60%":["t60","0_ex","0_in","delay_60","qr40_s3_60","_60_imar"],
+        "70%":["t70","40_in","delay_70","qr40_s3_70","_70_imar"],
+        "80%":["t80","60_in","delay_80","qr40_s3_80","_80_imar"],
+        "90%":["t90","90_in","95_in","94_in","delay_90","qr40_s3_90","_90_imar"],
+        "100%":["t100","100_in","98_in","delay_100","qr40_s3_100"]}
+
+#Ave Tags
+aveTags: ["thorax","ave","mip"]
+
+#FieldNames for CSV
+fieldnames: ["PatientID","PlanCT", "ITV_Total", "ITV_Tumor", "ITV_Nodal", "GTV_Total", "GTV_Tumor", "GTV_Nodal","BP_0%", "BP_10%", "BP_20%", "BP_30%", "BP_40%", "BP_50%", "BP_60%", "BP_70%", "BP_80%", "BP_90%", "BP_100%","Check"]

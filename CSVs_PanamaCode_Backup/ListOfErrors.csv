@@ -1,0 +1,605 @@
+ID,Reason
+19649,Not Matching RT
+80813,Not Matching RT
+222671,Not Matching RT
+228708,Not Matching RT
+252287,Not Matching RT
+312922,Not Matching RT
+381610,Not Matching RT
+424356,Not Matching PET
+448414,Not Matching RT
+590739,Not Matching RT
+612996,Not Matching RT
+661907,Not Matching RT
+692880,Not Matching RT
+716088,Not Matching RT
+746324,Not Matching RT
+778504,Not Matching RT
+795530,Not Matching RT
+841650,Not Matching RT
+936962,Not Matching RT
+1024970,Not Matching RT
+1026157,Not Matching RT
+1029163,Not Matching RT
+1044870,Not Matching RT
+1064373,Not Matching RT
+1079887,Not Matching RT
+1092836,Not Matching RT
+1098707,Not Matching RT
+1101622,Not Matching RT
+1162260,Not Matching RT
+1192817,Not Matching RT
+1218275,Not Matching RT
+1280645,Not Matching RT
+1281715,Not Matching RT
+1293451,Not Matching RT
+1378042,Not Matching RT
+1472578,Not Matching RT
+1473952,Not Matching RT
+1509318,Not Matching RT
+1629295,Not Matching RT
+1713271,Not Matching RT
+1829458,Not Matching RT
+2002884,Not Matching PET
+2013174,Not Matching RT
+2022493,Not Matching RT
+2022498,Not Matching RT
+2023115,Not Matching RT
+2029816,Not Matching RT
+2033151,Not Matching RT
+2044844,Not Matching RT
+2070767,Not Matching RT
+2075565,Not Matching RT
+2077822,Not Matching RT
+2080152,Not Matching RT
+2081487,Not Matching RT
+2092094,Not Matching RT
+2093457,Not Matching RT
+2095380,Not Matching RT
+2098449,Not Matching RT
+2101320,Not Matching RT
+2103103,Not Matching RT
+2106529,Not Matching RT
+2118505,Not Matching RT
+2122758,Not Matching RT
+2123123,Not Matching RT
+2126790,Not Matching RT
+2132773,Not Matching RT
+2135550,Not Matching RT
+2152679,Not Matching RT
+2159179,Not Matching RT
+2164041,Not Matching RT
+2164115,Not Matching RT
+2164950,Not Matching RT
+2177187,Not Matching RT
+2184797,Not Matching RT
+2191499,Not Matching RT
+2199851,Not Matching RT
+2207863,Not Matching RT
+2210649,Not Matching RT
+2210713,Not Matching RT
+2211491,Not Matching RT
+2370282,Not Matching RT
+2621854,Not Matching RT
+2718302,Not Matching RT
+2723765,Not Matching RT
+2730427,Not Matching RT
+2831703,Not Matching RT
+2883136,Not Matching RT
+2939330,Not Matching RT
+2971904,Not Matching RT
+2974993,Not Matching RT
+3003291,Not Matching RT
+3079368,Not Matching RT
+3452415,Not Matching RT
+3460902,Not Matching RT
+3696031,Not Matching RT
+3779193,Not Matching RT
+3865508,Not Matching RT
+3905403,Not Matching RT
+3969827,Not Matching RT
+4112868,Not Matching RT
+4156751,Not Matching RT
+4310122,Not Matching RT
+4566822,Not Matching RT
+4599052,Not Matching RT
+4629433,Not Matching RT
+4652003,Not Matching PET
+4681328,Not Matching RT
+4842977,Not Matching RT
+4965413,Not Matching PET
+5124665,Not Matching RT
+5129542,Not Matching RT
+5209156,Not Matching RT
+5250436,Not Matching RT
+5339456,Not Matching RT
+5680441,Not Matching RT
+5692827,Not Matching RT
+5910972,Not Matching RT
+6288140,Not Matching RT
+6425154,Not Matching RT
+6509190,Not Matching RT
+6519879,Not Matching RT
+6574417,Not Matching RT
+6578946,Not Matching RT
+6629816,Not Matching RT
+6939628,Not Matching RT
+6958675,Not Matching RT
+7004427,Not Matching RT
+7111280,Not Matching RT
+7116448,Not Matching RT
+7123816,Not Matching RT
+7274928,Not Matching RT
+7372109,Not Matching RT
+7373971,Not Matching RT
+7465780,Not Matching RT
+7536975,Not Matching RT
+7656927,Not Matching RT
+7812203,Not Matching RT
+8029859,Not Matching RT
+8032341,Not Matching RT
+8071166,Not Matching RT
+8132031,Not Matching RT
+8366778,Not Matching RT
+8415601,Not Matching RT
+8453344,Not Matching RT
+8564103,Not Matching RT
+8669208,Not Matching RT
+8729570,Not Matching RT
+8752960,Not Matching RT
+8879132,Not Matching RT
+8954119,Not Matching PET
+9105799,Not Matching RT
+9132538,Not Matching RT
+9146658,Not Matching RT
+9153360,Not Matching RT
+9270849,Not Matching RT
+9326361,Not Matching RT
+9353026,Not Matching RT
+9360307,Not Matching RT
+9362378,Not Matching RT
+9471355,Not Matching RT
+9475445,Not Matching PET
+9632494,Not Matching RT
+9635150,Not Matching RT
+9738908,Not Matching RT
+9876632,Not Matching RT
+4879,Missing PET
+13194,Missing PET
+14504,Missing PET
+17420,Missing PET
+67205,Missing PET
+77019,Missing PET
+84655,Missing PET
+110867,Missing PET
+128624,Missing PET
+147361,Missing PET
+147625,Missing PET
+168331,Missing PET
+174227,Missing PET
+197111,Missing PET
+206413,Missing PET
+210905,Missing PET
+234628,Missing PET
+258565,Missing PET
+270417,Missing PET
+281624,Missing PET
+291190,Missing PET
+315333,Missing PET
+333848,Missing PET
+340941,Missing PET
+346733,Missing PET
+367466,Missing PET
+433006,Missing PET
+458776,Missing PET
+497927,Missing PET
+511819,Missing PET
+521263,Missing PET
+546680,Missing PET
+584015,Missing PET
+619086,Missing PET
+619697,Missing PET
+632948,Missing PET
+636097,Missing PET
+654137,Missing PET
+659641,Missing PET
+664779,Missing PET
+687389,Missing PET
+709443,Missing PET
+731902,Missing PET
+759818,Missing PET
+772475,Missing PET
+791386,Missing PET
+846557,Missing PET
+849406,Missing PET
+860374,Missing PET
+868262,Missing PET
+869737,Missing PET
+892781,Missing PET
+894734,Missing PET
+926950,Missing PET
+934448,Missing PET
+986464,Missing PET
+986614,Missing PET
+1007981,Missing PET
+1123246,Missing PET
+1126789,Missing PET
+1127507,Missing PET
+1174472,Missing PET
+1187542,Missing PET
+1199667,Missing PET
+1204948,Missing PET
+1206414,Missing PET
+1209621,Missing PET
+1213955,Missing PET
+1234013,Missing PET
+1238015,Missing PET
+1238309,Missing PET
+1302698,Missing PET
+1304572,Missing PET
+1318004,Missing PET
+1455070,Missing PET
+1474077,Missing PET
+1493281,Missing PET
+1499147,Missing PET
+1503363,Missing PET
+1527273,Missing PET
+1663955,Missing PET
+1687510,Missing PET
+1713477,Missing PET
+1874719,Missing PET
+2022536,Missing PET
+2023740,Missing PET
+2023848,Missing PET
+2029187,Missing PET
+2035451,Missing PET
+2041194,Missing PET
+2045756,Missing PET
+2047597,Missing PET
+2055522,Missing PET
+2056059,Missing PET
+2078046,Missing PET
+2089169,Missing PET
+2102098,Missing PET
+2111496,Missing PET
+2131592,Missing PET
+2140224,Missing PET
+2143515,Missing PET
+2147823,Missing PET
+2151065,Missing PET
+2153269,Missing PET
+2154195,Missing PET
+2156167,Missing PET
+2156824,Missing PET
+2158090,Missing PET
+2159808,Missing PET
+2162911,Missing PET
+2163426,Missing PET
+2164796,Missing PET
+2165055,Missing PET
+2168825,Missing PET
+2171667,Missing PET
+2177865,Missing PET
+2179231,Missing PET
+2181664,Missing PET
+2183187,Missing PET
+2183919,Missing PET
+2184156,Missing PET
+2184783,Missing PET
+2186015,Missing PET
+2196145,Missing PET
+2197630,Missing PET
+2198906,Missing PET
+2216465,Missing PET
+2234752,Missing PET
+2259904,Missing PET
+2275768,Missing PET
+2279103,Missing PET
+2282174,Missing PET
+2334091,Missing PET
+2345491,Missing PET
+2375717,Missing PET
+2389234,Missing PET
+2392124,Missing PET
+2403161,Missing PET
+2441478,Missing PET
+2459531,Missing PET
+2501067,Missing PET
+2531074,Missing PET
+2608365,Missing PET
+2628217,Missing PET
+2659861,Missing PET
+2685249,Missing PET
+2685833,Missing PET
+2692411,Missing PET
+2720170,Missing PET
+2741303,Missing PET
+2741634,Missing PET
+2763334,Missing PET
+2781907,Missing PET
+2788596,Missing PET
+2815227,Missing PET
+2835183,Missing PET
+2843691,Missing PET
+2856145,Missing PET
+2916525,Missing PET
+2923539,Missing PET
+2934281,Missing PET
+2937274,Missing PET
+2953769,Missing PET
+2958711,Missing PET
+3040267,Missing PET
+3058377,Missing PET
+3082668,Missing PET
+3130926,Missing PET
+3139639,Missing PET
+3146700,Missing PET
+3146786,Missing PET
+3224668,Missing PET
+3307795,Missing PET
+3327503,Missing PET
+3330761,Missing PET
+3339488,Missing PET
+3379144,Missing PET
+3409927,Missing PET
+3416764,Missing PET
+3443633,Missing PET
+3506817,Missing PET
+3538176,Missing PET
+3539495,Missing PET
+3609812,Missing PET
+3615954,Missing PET
+3628533,Missing PET
+3648378,Missing PET
+3665388,Missing PET
+3667222,Missing PET
+3684922,Missing PET
+3694715,Missing PET
+3717936,Missing PET
+3740147,Missing PET
+3741290,Missing PET
+3851734,Missing PET
+3903141,Missing PET
+3909084,Missing PET
+3968754,Missing PET
+3977724,Missing PET
+3980744,Missing PET
+4021072,Missing PET
+4022713,Missing PET
+4032982,Missing PET
+4047342,Missing PET
+4058935,Missing PET
+4133970,Missing PET
+4148616,Missing PET
+4168672,Missing PET
+4199364,Missing PET
+4226054,Missing PET
+4239862,Missing PET
+4295926,Missing PET
+4342472,Missing PET
+4568570,Missing PET
+4575927,Missing PET
+4664141,Missing PET
+4690407,Missing PET
+4693524,Missing PET
+4741653,Missing PET
+4782261,Missing PET
+4790185,Missing PET
+4804120,Missing PET
+4809024,Missing PET
+4826048,Missing PET
+4850472,Missing PET
+4927095,Missing PET
+4937103,Missing PET
+4960069,Missing PET
+4961187,Missing PET
+4980116,Missing PET
+4996487,Missing PET
+5238052,Missing PET
+5260554,Missing PET
+5267139,Missing PET
+5317512,Missing PET
+5404623,Missing PET
+5426768,Missing PET
+5468590,Missing PET
+5474853,Missing PET
+5532020,Missing PET
+5539952,Missing PET
+5566654,Missing PET
+5593870,Missing PET
+5609966,Missing PET
+5619644,Missing PET
+5635761,Missing PET
+5641888,Missing PET
+5721596,Missing PET
+5735628,Missing PET
+5835644,Missing PET
+5864885,Missing PET
+5938385,Missing PET
+5960268,Missing PET
+6002980,Missing PET
+6004976,Missing PET
+6071737,Missing PET
+6163057,Missing PET
+6224291,Missing PET
+6315986,Missing PET
+6357374,Missing PET
+6374781,Missing PET
+6402783,Missing PET
+6493810,Missing PET
+6557018,Missing PET
+6577371,Missing PET
+6633661,Missing PET
+6693447,Missing PET
+6706892,Missing PET
+6718064,Missing PET
+6730478,Missing PET
+6841834,Missing PET
+6874374,Missing PET
+6926232,Missing PET
+6934596,Missing PET
+6940695,Missing PET
+7013744,Missing PET
+7066738,Missing PET
+7153622,Missing PET
+7168701,Missing PET
+7193514,Missing PET
+7201835,Missing PET
+7205457,Missing PET
+7236265,Missing PET
+7272393,Missing PET
+7283229,Missing PET
+7313332,Missing PET
+7342853,Missing PET
+7344995,Missing PET
+7391514,Missing PET
+7417192,Missing PET
+7486734,Missing PET
+7513114,Missing PET
+7513310,Missing PET
+7529543,Missing PET
+7563548,Missing PET
+7594557,Missing PET
+7624400,Missing PET
+7629879,Missing PET
+7700895,Missing PET
+7706205,Missing PET
+7732839,Missing PET
+7755473,Missing PET
+7758590,Missing PET
+7786608,Missing PET
+7838986,Missing PET
+7848534,Missing PET
+8069479,Missing PET
+8127135,Missing PET
+8156441,Missing PET
+8214116,Missing PET
+8223634,Missing PET
+8269736,Missing PET
+8371724,Missing PET
+8372090,Missing PET
+8498050,Missing PET
+8501962,Missing PET
+8510422,Missing PET
+8564823,Missing PET
+8587028,Missing PET
+8605869,Missing PET
+8634486,Missing PET
+8686962,Missing PET
+8698891,Missing PET
+8713888,Missing PET
+8715455,Missing PET
+8717410,Missing PET
+8725573,Missing PET
+8726194,Missing PET
+8728753,Missing PET
+8736324,Missing PET
+8748066,Missing PET
+8751725,Missing PET
+8759998,Missing PET
+8778014,Missing PET
+8847536,Missing PET
+8874736,Missing PET
+8882950,Missing PET
+8882956,Missing PET
+8884976,Missing PET
+8909585,Missing PET
+8921596,Missing PET
+8969502,Missing PET
+9005599,Missing PET
+9017217,Missing PET
+9025583,Missing PET
+9089152,Missing PET
+9098977,Missing PET
+9105082,Missing PET
+9156144,Missing PET
+9212857,Missing PET
+9214131,Missing PET
+9222012,Missing PET
+9231017,Missing PET
+9245719,Missing PET
+9300748,Missing PET
+9368667,Missing PET
+9419227,Missing PET
+9461677,Missing PET
+9468349,Missing PET
+9513070,Missing PET
+9513109,Missing PET
+9573899,Missing PET
+9588158,Missing PET
+9593063,Missing PET
+9593888,Missing PET
+9604701,Missing PET
+9646447,Missing PET
+9692397,Missing PET
+9786492,Missing PET
+9823614,Missing PET
+9827797,Missing PET
+9865680,Missing PET
+9871994,Missing PET
+9918855,Missing PET
+9933319,Missing PET
+9949900,Missing PET
+658571,Not Matching PET
+1011154,Not Matching PET
+1118297,Not Matching PET
+1166651,Not Matching PET
+1397662,Not Matching PET
+1484586,Not Matching PET
+2024647,Not Matching PET
+2055994,Not Matching PET
+2069751,Not Matching PET
+2947384,Not Matching PET
+3166711,Not Matching PET
+4961403,Not Matching PET
+6571756,Not Matching PET
+6640222,Not Matching PET
+9675330,Not Matching PET
+9765730,Not Matching PET
+325073,Dicom2Nii Err
+561128,Dicom2Nii Err
+653371,Dicom2Nii Err
+1136033,Dicom2Nii Err
+1295534,Dicom2Nii Err
+1353431,Dicom2Nii Err
+1396853,Dicom2Nii Err
+1401248,Dicom2Nii Err
+1464499,Dicom2Nii Err
+1495036,Dicom2Nii Err
+1539651,Dicom2Nii Err
+1756631,Dicom2Nii Err
+1758002,Dicom2Nii Err
+1967798,Dicom2Nii Err
+2255599,Dicom2Nii Err
+2595492,Dicom2Nii Err
+2807433,Dicom2Nii Err
+2894544,Dicom2Nii Err
+3010418,Dicom2Nii Err
+3188894,Dicom2Nii Err
+3253493,Dicom2Nii Err
+4672804,Dicom2Nii Err
+4720502,Dicom2Nii Err
+5160718,Dicom2Nii Err
+5501890,Dicom2Nii Err
+5547490,Dicom2Nii Err
+5649651,Dicom2Nii Err
+5686032,Dicom2Nii Err
+5720054,Dicom2Nii Err
+5826774,Dicom2Nii Err
+6251754,Dicom2Nii Err
+6568268,Dicom2Nii Err
+7035867,Dicom2Nii Err
+7210726,Dicom2Nii Err
+7260342,Dicom2Nii Err
+7280302,Dicom2Nii Err
+7901414,Dicom2Nii Err
+8144648,Dicom2Nii Err
+9028980,Dicom2Nii Err
+9034825,Dicom2Nii Err
+9339426,Dicom2Nii Err
+9354107,Dicom2Nii Err
+9375818,Dicom2Nii Err
+9549714,Dicom2Nii Err
+9600274,Dicom2Nii Err
+9885235,Dicom2Nii Err
+9898346,Dicom2Nii Err

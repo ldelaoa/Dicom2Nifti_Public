@@ -1,0 +1,3 @@
+tot_labels = ['ITV',"IGTV","IgTV","ITV1","ITV2","ITV3","ITV totaal def","2ITV","ITV_TOT","ITV_6000","ITV_5100","ITV_Totaal","ITV_LBK","ITV_LOK"]
+tumor_labels = ['ITVtumor',"ITV_tumor","ITVtumor def","2ITV_tumor","ITV-P","ITVtumorA1","ITV_tumor_LBK"]
+ln_labels = ['ITVklieren',"ITV_klier","ITV_Klier","ITVklieren def","2ITV_klier","ITV_n","ITV_klier_LBK"]
