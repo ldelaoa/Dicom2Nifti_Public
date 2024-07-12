@@ -22,7 +22,7 @@ def main(root,csv_file_path):
     for currPx in tqdm(pxList):
         for subroot,dirs,files in os.walk(os.path.join(root,currPx)):
             for d in dirs:
-                if "rtstruct" in d or "pproved" in d:
+                if "rtstruct" in d.lower() or "pproved" in d:
                     rtstructFile_list = os.listdir(os.path.join(subroot,d))
                     for currRTfile in rtstructFile_list:
                         csv_list.append(getLabels(os.path.join(subroot,d,currRTfile),currPx))
