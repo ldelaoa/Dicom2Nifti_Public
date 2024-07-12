@@ -17,20 +17,16 @@ def getLabels(rtstruct_path,px):
     return [px,None,None]
 
 def main(root,csv_file_path):
-    csv_list = []
-    pxList = os.listdir(root)
-    for currPx in tqdm(pxList):
-        for subroot,dirs,files in os.walk(os.path.join(root,currPx)):
-            for d in dirs:
-                if "rtstruct" in d.lower() or "pproved" in d:
-                    rtstructFile_list = os.listdir(os.path.join(subroot,d))
-                    for currRTfile in rtstructFile_list:
-                        csv_list.append(getLabels(os.path.join(subroot,d,currRTfile),currPx))
-        
     with open (csv_file_path,'w',newline='') as file:
         writer = csv.writer(file)
-        for i in range(len(csv_list)):
-            writer.writerow(csv_list[i])
+        pxList = os.listdir(root)
+        for currPx in tqdm(pxList):
+            for subroot,dirs,files in os.walk(os.path.join(root,currPx)):
+                for d in dirs:
+                    if "rtstruct" in d.lower() or "pproved" in d:
+                        rtstructFile_list = os.listdir(os.path.join(subroot,d))
+                        for currRTfile in rtstructFile_list:
+                            writer.writerow(getLabels(os.path.join(subroot,d,currRTfile),currPx))
 
 if __name__ == '__main__':
     root = "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/DICOM_data/DATA_VOLLEDIG_unstructured/"
