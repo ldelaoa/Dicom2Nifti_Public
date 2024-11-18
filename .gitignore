@@ -1,2 +1,4 @@
 
 .ipynb_checkpoints/RTStruct_Explore_FullFolder-checkpoint.py
+/.ipynb_checkpoints
+*.pyc

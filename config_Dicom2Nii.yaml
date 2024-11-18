@@ -1,7 +1,7 @@
 window_type : 'lung'
 root_p : //zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/
 source_csv: //zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CSVs/FinalDicomTable3.csv
-save_path : //zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CT_ITV_GTV_XBP_Nii/
+save_path : //zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CT_ITV_GTV_XBP_Nii_(170)/
 
 structure_for_mask : None
 image_generation_flag: True
