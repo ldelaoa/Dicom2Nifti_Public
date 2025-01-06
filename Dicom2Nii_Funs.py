@@ -65,7 +65,6 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
     slices = [pdcm.read_file(dcm) for dcm in input_filepaths]
     
     modality = slices[0].Modality
-    print("working on: ",modality)
     
     if modality != 'RTSTRUCT':
         slices.sort(key=lambda x: float(x.ImagePositionPatient[2]))
@@ -167,12 +166,10 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
             sitk_writer.SetImageIO('NiftiImageIO')
             sitk_writer.SetFileName(output_filepath)
             sitk_writer.Execute(sitk_image)
+            print("CT/PET conversion finished ok")
     if modality == 'RTSTRUCT':
         rtstruct_file = input_filepaths
         for rt_file in rtstruct_file:
-
-            print("Converting RTSTRUCT image")
-
             masks = get_masks(rt_file,
                             labels=labels_rtstruct,
                             image_position_patient=image_position_patient,
@@ -184,7 +181,6 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
                 print("No Masks")
                 return None, None, None,None
             for label, np_mask in masks: #label.lower()
-                #print("Labels: ",label)
                 output_filepath = join(output_folder,patientID,modality.lower() + extension)
                 #output_filepath = join(output_folder,filename+'_'+modality.lower() + extension)
                 sitk_writer = sitk.ImageFileWriter()
@@ -234,9 +230,8 @@ def get_masks(rtstruct_file,
               pixel_spacing=None,
               shape=None,
               dtype=np.int8):
-    print('in get_mask')
     contours = read_structure(rtstruct_file, labels=labels)
-    return get_mask_from_contour(contours,
+    return get_mask_from_contour_robust(contours,
                                  image_position_patient,
                                  axial_positions,
                                  pixel_spacing,
@@ -319,14 +314,7 @@ def choose_rtstruct(rtstruct_file):
             #print(roi_seq.ROIName)
 
 
-def get_mask_from_contour(contours,
-                          image_position_patient,
-                          axial_positions,
-                          pixel_spacing,
-                          shape,
-                          dtype=np.uint8):
-
-    print('get_mask_from_c')
+def get_mask_from_contour_robust(contours, image_position_patient, axial_positions, pixel_spacing, shape, dtype=np.uint8):
     z = np.asarray(axial_positions)
     pos_r = image_position_patient[1]
     spacing_r = pixel_spacing[1]
@@ -334,14 +322,56 @@ def get_mask_from_contour(contours,
     spacing_c = pixel_spacing[0]
 
     output = []
+    previous_nodes = None
+
+    for con in contours:
+        try:
+            mask = np.zeros(shape, dtype=dtype)
+            for current in con['contours']:
+                nodes = np.array(current).reshape((-1, 3))
+                if nodes.shape[0] == 1:
+                    if previous_nodes is not None:
+                        nodes = previous_nodes
+                        print("Curr mask",con['name']," OK Interpolate node")
+                    else:
+                        print("Curr mask",con['name'],"Skip if no previous nodes to interpolate from")
+                        continue  
+                else: 
+                    previous_nodes = nodes
+                assert np.amax(np.abs(np.diff(nodes[:, 2]))) == 0
+                z_indices = np.where((nodes[0, 2] - 0.001 < z) & (z < nodes[0, 2] + 0.001))[0]
+                if z_indices.size == 0:
+                    z_index = np.interp(nodes[0, 2], z, np.arange(len(z)))
+                else:
+                    z_index = z_indices[0]
+                r = (nodes[:, 1] - pos_r) / spacing_r
+                c = (nodes[:, 0] - pos_c) / spacing_c
+                rr, cc = polygon(r, c)
+                if len(rr) > 0 and len(cc) > 0:
+                    if np.max(rr) > 512 or np.max(cc) > 512:
+                        raise Exception("The RTSTRUCT file is compromised")
+                mask[rr, cc, int(z_index)] = 1
+            output.append((con['name'], mask))
+        except Exception as e:
+            print("ERROR on Dicom funs robust",e)
+            continue
+    return output
+
+
+def get_mask_from_contour(contours,image_position_patient,axial_positions,pixel_spacing,shape,dtype=np.uint8):
+    z = np.asarray(axial_positions)
+    pos_r = image_position_patient[1]
+    spacing_r = pixel_spacing[1]
+    pos_c = image_position_patient[0]
+    spacing_c = pixel_spacing[0]
+    output = []
     for con in contours:
         try:
             mask = np.zeros(shape, dtype=dtype)
             for current in con['contours']:
                 nodes = np.array(current).reshape((-1, 3))
                 assert np.amax(np.abs(np.diff(nodes[:, 2]))) == 0
-                z_index = np.where((nodes[0, 2] - 0.001 < z)
-                                & (z < nodes[0, 2] + 0.001))[0][0]
+                z_index = np.where((nodes[0, 2] - 0.001 < z) & (z < nodes[0, 2] + 0.001))[0][0]
                 r = (nodes[:, 1] - pos_r) / spacing_r
                 c = (nodes[:, 0] - pos_c) / spacing_c
                 rr, cc = polygon(r, c)
@@ -351,8 +381,9 @@ def get_mask_from_contour(contours,
                 mask[rr, cc, z_index] = 1
             output.append((con['name'], mask))
         except Exception as e:
-            print(e)
-            continue
+            print("ERROR on Dicom funs",e)
+            print("")
+        
     return output
 
 
