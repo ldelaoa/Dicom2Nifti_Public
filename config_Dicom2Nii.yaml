@@ -14,5 +14,5 @@ itv_ln_labels : ["ITVklieren", "ITV_klier", "ITV_Klier", "ITVklieren def", "2ITV
 
 # GTV Labels
 gtv_tot_labels : ["GTV", "GTV1", "GTV2", "GTV3", "GTV totaal def", "2GTV", "GTV_TOT", "GTV_6000", "GTV_5100", "GTV_Totaal", "GTV_LBK", "GTV_LOK", "GTV_5000", "GTV_preop", "GTV_totaal", "GTV_voor OK", "GTVtotaal", "GTVnew", "GTV(op exp)", "GTVop", "GTV_voor OK", "GTV oorspr"]
-gtv_tumor_labels : ["GTVtumor", "GTV_tumor", "GTVtumor def", "2GTV_tumor", "GTV-P", "GTVtumorA1", "GTV_tumor_LBK", "GTV tumor", "GTVp", "GTVtu", "GTVtumor_exp", "GTVtumor_exp_50->0", "GTVtumor_insp", "GTVpatelectasebewaren(1)", "GTVt"]
-gtv_ln_labels : ["GTVklieren", "GTV_klier", "GTV_Klier", "GTVklieren def", "2GTV_klier", "GTV_n", "GTV_klier_LBK", "GTVn", "GTVnode_exp", "GTVnodes_exp", "GTVnodes_exp_50->0", "GTVnodes_insp", "GTVklieren"]
+gtv_tumor_labels : ["Tumor","GTVtumor", "GTV_tumor", "GTVtumor def", "2GTV_tumor", "GTV-P", "GTVtumorA1", "GTV_tumor_LBK", "GTV tumor", "GTVp", "GTVtu", "GTVtumor_exp", "GTVtumor_exp_50->0", "GTVtumor_insp", "GTVpatelectasebewaren(1)", "GTVt"]
+gtv_ln_labels : ["LN","GTVklieren", "GTV_klier", "GTV_Klier", "GTVklieren def", "2GTV_klier", "GTV_n", "GTV_klier_LBK", "GTVn", "GTVnode_exp", "GTVnodes_exp", "GTVnodes_exp_50->0", "GTVnodes_insp", "GTVklieren"]

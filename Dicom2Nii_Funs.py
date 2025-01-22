@@ -11,8 +11,26 @@ import warnings
 from os.path import join
 from datetime import time, datetime
 import pydicom as pdcm
+import re
 from pydicom.tag import Tag
 
+def sanitize_filename(filename):
+    """
+    Replaces invalid characters in a filename with valid equivalents or removes them.
+    
+    Args:
+    - filename (str): Original filename
+    
+    Returns:
+    - str: Sanitized filename
+    """
+    invalid_chars = {
+        '>': '_to_',  # Replace '>' with '_to_'
+        '<': '_from_',  # Example for '<' if needed
+    }
+    pattern = re.compile('|'.join(re.escape(char) for char in invalid_chars.keys()))
+    sanitized = pattern.sub(lambda match: invalid_chars[match.group()], filename)
+    return sanitized
 
 def convert_dicom_to_nifty(input_filepaths,patientID,
                            output_folder,
@@ -62,7 +80,7 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
         numpy.array: The numpy image, used to compute the bounding boxes
     """
 
-    slices = [pdcm.read_file(dcm) for dcm in input_filepaths]
+    slices = [pdcm.dcmread(dcm) for dcm in input_filepaths]
     
     modality = slices[0].Modality
     
@@ -166,7 +184,7 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
             sitk_writer.SetImageIO('NiftiImageIO')
             sitk_writer.SetFileName(output_filepath)
             sitk_writer.Execute(sitk_image)
-            print("CT/PET conversion finished ok")
+            #print("CT/PET conversion finished ok")
     if modality == 'RTSTRUCT':
         rtstruct_file = input_filepaths
         for rt_file in rtstruct_file:
@@ -178,14 +196,18 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
                             shape=np_image.shape,
                             dtype=dtype_image)
             if len(masks)==0:
-                print("No Masks")
+                print("No Masks",rtstruct_file)
+                exit()
                 return None, None, None,None
             for label, np_mask in masks: #label.lower()
                 output_filepath = join(output_folder,patientID,modality.lower() + extension)
+
                 #output_filepath = join(output_folder,filename+'_'+modality.lower() + extension)
                 sitk_writer = sitk.ImageFileWriter()
                 sitk_writer.SetImageIO('NiftiImageIO')                
                 output_filepath_mask = output_filepath.split('.')[0] + '_' + label + extension
+                output_filepath_mask = sanitize_filename(output_filepath.split('.')[0] + '_' + label + extension)
+
                 #print(output_filepath_mask)
 
                 sitk_mask = get_sitk_volume_from_np(np_mask, pixel_spacing,
@@ -224,7 +246,7 @@ def correct_patient_name(patient_name):
 
 
 def get_masks(rtstruct_file,
-              labels, #=['GTV tumor','GTV-PT', 'GTV  primaire tumor', 'gtv goed',  'GTV_CT+PET',  'GTVTumor',  'GTVtumor', 'GTV70',  'GTV_tumor','GTV PET+CT',  'gtv', 'gtv PT', 'GTV PT', 'gtv tumor', 'GTV',  'GTVpt'],
+              labels, 
               image_position_patient=None,
               axial_positions=None,
               pixel_spacing=None,
@@ -241,7 +263,7 @@ def get_masks(rtstruct_file,
 #labels=['GTV tumor','GTV-PT', 'GTV  primaire tumor', 'gtv goed',  'GTV_CT+PET',  'GTVTumor',  'GTVtumor', 'GTV70',  'GTV_tumor','GTV PET+CT',  'gtv', 'gtv PT', 'GTV PT', 'gtv tumor', 'GTV',  'GTVpt']
 
 def read_structure(rtstruct_file, labels):#=['gtvp', 'gtv tumor', 'gtv_pt','gtv-tumor','gtv-pt','gtvprim_tumor','gtv','gtvpt','gtv pt','gtv_tumor','gtvprimairetumor','gtv primaire tumor','gtv  primaire tumor','gtvtumor','gtv_p','gtv pet+ct','gtv pet-ct']):
-    structure = pdcm.read_file(rtstruct_file)
+    structure = pdcm.dcmread(rtstruct_file)
     contours = []
 
     try:
@@ -249,7 +271,7 @@ def read_structure(rtstruct_file, labels):#=['gtvp', 'gtv tumor', 'gtv_pt','gtv-
             contour = {}
             #print("Names: ",roi_seq.ROIName)
             for label in labels:            
-                if roi_seq.ROIName.lower() == label.lower():
+                if label.lower() in roi_seq.ROIName.lower():
                     contour['color'] = structure.ROIContourSequence[i].ROIDisplayColor
                     contour['number'] = structure.ROIContourSequence[i].ReferencedROINumber
                     contour['name'] = roi_seq.ROIName
@@ -266,7 +288,7 @@ def read_structure(rtstruct_file, labels):#=['gtvp', 'gtv tumor', 'gtv_pt','gtv-
     return contours
 
 def read_headers(rtstruct_file, labels=['GTV tumor','GTV-PT', 'GTV  primaire tumor', 'gtv goed',  'GTV_CT+PET',  'GTVTumor',  'GTVtumor', 'GTV70',  'GTV_tumor','GTV PET+CT',  'gtv', 'gtv PT', 'GTV PT', 'gtv tumor', 'GTV',  'GTVpt',  'GTVp']):
-    structure = pdcm.read_file(rtstruct_file)
+    structure = pdcm.dcmread(rtstruct_file)
     gtv_names = []
     try:
         for i, roi_seq in enumerate(structure.StructureSetROISequence):
@@ -286,7 +308,7 @@ def choose_rtstruct(rtstruct_file):
 
         #print(name)
 
-        structure = pdcm.read_file(name)
+        structure = pdcm.dcmread(name)
 
         try:
             for i, roi_seq in enumerate(structure.StructureSetROISequence):
@@ -390,8 +412,8 @@ def get_mask_from_contour(contours,image_position_patient,axial_positions,pixel_
 def get_physical_values_ct(slices, dtype=np.float32):
     image = list()
     for s in slices:
-        image.append(
-            float(s.RescaleSlope) * s.pixel_array + float(s.RescaleIntercept))
+        image.append(float(s.RescaleSlope) * s.pixel_array + float(s.RescaleIntercept))
+        #image.append(s.RescaleSlope * s.pixel_array + s.RescaleIntercept)
     return np.stack(image, axis=-1).astype(dtype)
 
 
@@ -443,7 +465,7 @@ def get_suv_from_bqml_new(slices, decay_time, patient_weight, dtype=np.float32):
     # Get SUV from raw PET
     image = list()
     for s in slices:
-        pet = float(s.RescaleSlope) * s.pixel_array + float(s.RescaleIntercept)
+        pet = float(s.RescaleSlope) * s._pixel_array + float(s.RescaleIntercept)
         half_life = float(
             s.RadiopharmaceuticalInformationSequence[0].RadionuclideHalfLife)
         total_dose = float(
@@ -512,7 +534,7 @@ def get_suv_philips(slices, dtype=np.float32):
     image = list()
     suv_scale_factor_tag = Tag(0x70531000)
     for s in slices:
-        im = (float(s.RescaleSlope) * s.pixel_array +
+        im = (float(s.RescaleSlope) * s._pixel_array +
               float(s.RescaleIntercept)) * float(s[suv_scale_factor_tag].value)
         image.append(im)
     return np.stack(image, axis=-1).astype(dtype)
@@ -522,7 +544,7 @@ def get_suv_from_bqml(slices, decay_time, patient_weight, dtype=np.float32):
     # Get SUV from raw PET
     image = list()
     for s in slices:
-        pet = float(s.RescaleSlope) * s.pixel_array + float(s.RescaleIntercept)
+        pet = float(s.RescaleSlope) * s._pixel_array + float(s.RescaleIntercept)
         half_life = float(
             s.RadiopharmaceuticalInformationSequence[0].RadionuclideHalfLife)
         total_dose = float(
