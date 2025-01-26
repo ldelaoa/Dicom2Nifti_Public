@@ -206,7 +206,7 @@ def convert_dicom_to_nifty(input_filepaths,patientID,
                 sitk_writer = sitk.ImageFileWriter()
                 sitk_writer.SetImageIO('NiftiImageIO')                
                 output_filepath_mask = output_filepath.split('.')[0] + '_' + label + extension
-                output_filepath_mask = sanitize_filename(output_filepath.split('.')[0] + '_' + label + extension)
+                output_filepath_mask = sanitize_filename(output_filepath.split('.')[0] + '_' +filename+"_"+ label + extension)
 
                 #print(output_filepath_mask)
 
