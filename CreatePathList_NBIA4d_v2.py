@@ -33,7 +33,7 @@ def GetModalityandUID(path):
 def SaveinCSV(currPx,CT_path,RT_path):
     # Create a csv file with the following structure pxID,CSV,RT
     savecsvpath = 'C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/'
-    csvpath = os.path.join(savecsvpath,'NBIA4d_RayStationDR.csv')
+    csvpath = os.path.join(savecsvpath,'NBIA4d_DicomSelectedPaths.csv')
     if not os.path.exists(csvpath):
         df = pd.DataFrame(columns=['pxID','CT','RT'])
         df.to_csv(csvpath, index=False)
@@ -45,7 +45,7 @@ def SaveinCSV(currPx,CT_path,RT_path):
 
 
 if __name__ == '__main__':
-    root = 'C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/DicomSelected_RayStationDR/'
+    root = 'C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/Dicom_Selected/'
     PxList = os.listdir(root)
     for currPx in tqdm(PxList):
         timepoints = os.listdir(root+currPx)
@@ -55,17 +55,18 @@ if __name__ == '__main__':
             rt_uid,ct_uid = [],[]
             rt_list ,ct_list = [],[]
             for currFolder in allfolders:
-                if os.path.isdir(os.path.join(root,currPx,currtimepoint,currFolder)):
-                    files = os.listdir(os.path.join(root,currPx,currtimepoint,currFolder))
-                for file in files: 
-                    modality,temp_uid = GetModalityandUID(os.path.join(root,currPx,currtimepoint,currFolder,file))
-                    if modality == 'CT':
-                        ct_list.append(os.path.join(root,currPx,currtimepoint,currFolder))
-                        ct_uid.append(temp_uid)
-                        break
-                    if modality == 'RTSTRUCT':
-                        rt_list.append(os.path.join(root,currPx,currtimepoint,currFolder,file))
-                        rt_uid.append(temp_uid)
+                if not("BP0%" in currFolder):
+                    if os.path.isdir(os.path.join(root,currPx,currtimepoint,currFolder)):
+                        files = os.listdir(os.path.join(root,currPx,currtimepoint,currFolder))
+                    for file in files: 
+                        modality,temp_uid = GetModalityandUID(os.path.join(root,currPx,currtimepoint,currFolder,file))
+                        if modality == 'CT':
+                            ct_list.append(os.path.join(root,currPx,currtimepoint,currFolder))
+                            ct_uid.append(temp_uid)
+                            break
+                        if modality == 'RTSTRUCT':
+                            rt_list.append(os.path.join(root,currPx,currtimepoint,currFolder,file))
+                            rt_uid.append(temp_uid)
             count=0
             for i in range(len(ct_list)):
                 for j in range(len(rt_list)):

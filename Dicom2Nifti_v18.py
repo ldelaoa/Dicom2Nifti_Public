@@ -25,8 +25,8 @@ def openYaml():
         #source_csv_path = "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/ListsOfPatients/Dicom2Nii_LastRound.csv"
         #save_path = config['save_path']
 
-        source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/NBIA4d_RayStationDR.csv"
-        save_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/Nifti_Selected_DR/"
+        source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/NBIA4d_DicomSelectedPaths.csv"
+        save_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/Nifti_Selected/"
         
     
     df = pd.read_csv(source_csv_path)
@@ -102,14 +102,14 @@ def main():
         patientID = row['pxID']
         CT_path = row['CT']
         RT_path = row['RT']
-
-        save_path_px = os.path.join(save_path,patientID)
-        if not(os.path.exists(save_path_px)): 
-            os.makedirs(save_path_px)
-        
-        image, pixel_spacing, image_position_patient,axial_positions = convertPlanCT(CT_path,patientID,save_path,"PlanCT_")
-                
-        convertRT(RT_path,patientID,save_path,target_labels,image=image, pixel_spacing=pixel_spacing, image_position_patient=image_position_patient,axial_positions=axial_positions)
+        if patientID == "112_HM10395":
+            save_path_px = os.path.join(save_path,patientID)
+            if not(os.path.exists(save_path_px)): 
+                os.makedirs(save_path_px)
+            
+            image, pixel_spacing, image_position_patient,axial_positions = convertPlanCT(CT_path,patientID,save_path,"PlanCT_")
+                    
+            convertRT(RT_path,patientID,save_path,target_labels,image=image, pixel_spacing=pixel_spacing, image_position_patient=image_position_patient,axial_positions=axial_positions)
 
 
 if __name__ == "__main__":
