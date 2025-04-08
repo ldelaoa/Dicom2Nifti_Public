@@ -22,14 +22,15 @@ def openYaml():
     
         
         #source_csv_path = config['source_csv']
-        #source_csv_path = "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/ListsOfPatients/Dicom2Nii_LastRound.csv"
+        source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Ch2/XLS/TrainingTestingCohort_WithBPandITV_paths.csv"
+        save_path = "//zkh/appdata/RTDicom/Projectline_modelling_lung_cancer/Users/Luis/CT_ITV_GTV_XBP_Nii_v2/"
         #save_path = config['save_path']
 
         #source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/NBIA4d_DicomSelectedPaths.csv"
         #save_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/NBIA_4d/Nifti_Selected/"
 
-        source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/REACT/REACT_DicomSelectedPaths.csv"
-        save_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/REACT/Selected_REACT_Nifti/"
+        #source_csv_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/REACT/REACT_DicomSelectedPaths.csv"
+        #save_path = "C:/Users/delaOArevaLR/OneDrive - UMCG/Scans/REACT/Selected_REACT_Nifti/"
         
     
     df = pd.read_csv(source_csv_path)
